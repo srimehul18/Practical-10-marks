@@ -4,12 +4,14 @@ import React from 'react'
 const Products = () => {
     const [data,setData] = useState("")
     const API = "https://dummyjson.com/products"
- 
-      
-        fetch(API)
+ useEffect(()=>{
+    fetch(API)
         .then(res => res.json())
         .then(res => setData(res.Products))
         .catch(console.error())
+ },[])
+      
+        
         
         
     
